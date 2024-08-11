@@ -5,11 +5,11 @@ import NoteItem from './components/NoteItem/NoteItem';
 
 function App() {
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) || []);
-  const inputRef = useRef(null);
+  const noteInput = useRef(null);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
-  const [title, setTitle] = useState('No title');
-  const inputTitleRef = useRef(null);
+  const [title, setTitle] = useState('');
+  const titleInput = useRef(null);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users/1')
@@ -24,18 +24,18 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (inputRef.current.value !== '') {
-      setNotes([inputRef.current.value, ...notes]);
-      inputRef.current.value = '';
+    if (noteInput.current.value !== '') {
+      setNotes([noteInput.current.value, ...notes]);
+      noteInput.current.value = '';
     }
   }
 
   function handleChangeTitle(event) {
-    console.log('change title', inputTitleRef.current.value);
+    console.log('change title', titleInput.current.value);
     event.preventDefault();
-    if (inputTitleRef.current.value !== '') {
-      setTitle(inputTitleRef.current.value);
-      inputTitleRef.current.value = '';
+    if (titleInput.current.value !== '') {
+      setTitle(titleInput.current.value);
+      titleInput.current.value = '';
     }
   }
 
@@ -65,7 +65,7 @@ function App() {
           type="text"
           name="userNote"
           placeholder='Enter note'
-          ref={inputRef}
+          ref={noteInput}
         />
         <button type="submit">Add</button>
       </form>
@@ -74,7 +74,7 @@ function App() {
           type="text"
           name="notesTitle"
           placeholder='Enter title'
-          ref={inputTitleRef}
+          ref={titleInput}
         />
         <button type="submit">Change title</button>
       </form>

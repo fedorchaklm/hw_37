@@ -2,7 +2,6 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 * {
@@ -15,6 +14,7 @@
 .app {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
   min-width: 300px;
   background-color: #c4c2c2;
@@ -39,8 +39,9 @@ input {
   border-radius: 8px;
 }
 
-.notes-wrap {
+.notes_wrap {
   min-height: 50px;
+  text-align: center;
 }
 
 button[type="submit"] {
