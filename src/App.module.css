@@ -1,0 +1,60 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+  background-color: #c4c2c2;
+  border-radius: 8px;
+  padding-inline: 5px;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  outline: none;
+  padding: 0.6em 1.2em;
+  min-width: 300px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.notes-wrap {
+  min-height: 50px;
+}
+
+button[type="submit"] {
+  width: 100%;
+}
+
+.user_info,
+.error_info,
+.loading_info  {
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.error_info,
+.loading_info {
+  color: var(--main-color);
+}

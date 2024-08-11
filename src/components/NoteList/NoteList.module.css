@@ -1,0 +1,8 @@
+.note_list {
+  color: var(--main-color);
+  list-style: none;
+}
+
+.title {
+  text-align: center;
+}
